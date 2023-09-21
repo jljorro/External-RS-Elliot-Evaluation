@@ -1,0 +1,19 @@
+experiment:
+  data_config:
+    strategy: fixed
+    train_path: data/elliot/train.tsv
+    test_path: data/elliot/test.tsv
+  dataset: movielens-1m
+  top_k: 50
+  models:
+    ProxyRecommender: 
+      path: data/elliot/predictions.tsv
+  evaluation:
+    cutoffs: [10, 5]
+    simple_metrics: [nDCG, Precision, Recall, MAP, MAR, MRR, MAE, RMSE]
+    relevant_threshold: 1
+    print_results_as_triplets: True
+  path_output_rec_result: results/rec_res
+  path_output_rec_weight: results/rec_wei
+  path_output_rec_performance: results/rec_perf
+  path_log_folder: results/log
